@@ -1,17 +1,8 @@
 {% extends "eduprod/layout.html" %}
 {% block body %}
 <div id="content" data-questions='{{ questions_json|safe }}'></div>
-<button id="revealBtn">Reveal Answer</button>
-<form action="{% url 'eduprod:index' %}" method="post" style="margin: 0; margin-left: 20px;">
-    {% csrf_token %}
-    <button type="submit">Reset Quiz</button>
-</form>
-<!-- Add Question Link -->
-<div style="margin-top: 20px;">
-    <a href="{% url 'eduprod:question_add' %}">Add a new question</a>
-</div>
-<!-- Link to Question List for Editing or Deleting Questions -->
-<div style="margin-top: 10px;">
-    <a href="{% url 'eduprod:question_list' %}">Manage questions</a>
-</div>
+<button id="revealBtn">Metaphor</button>
+<button id="revealBtn">Simile</button>
+<button id="revealBtn">Hyperbole</button>
+<button id="revealBtn">Alliteration</button>
 {% endblock %}

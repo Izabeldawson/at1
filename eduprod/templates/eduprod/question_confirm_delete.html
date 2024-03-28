@@ -1,8 +1,0 @@
-{% extends "eduprod/layout.html" %}
-{% block body %}
-<h2>Are you sure you want to delete "{{ object }}"?</h2>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit"> Confirm </button>
-</form>
-{% endblock %}

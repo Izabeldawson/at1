@@ -1,9 +1,0 @@
-{% extends "eduprod/layout.html" %}
-{% block body %}
-<h2>{% if object %}Edit Question{% else %}Add Question{% endif %}</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
-</form>
-{% endblock %}
