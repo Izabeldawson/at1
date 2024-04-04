@@ -4,12 +4,11 @@ from django.apps import AppConfig
 class EduprodConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'eduprod'
-from flask import Flask, request, make_response, redirect, render_template
-import hashlib
-import uuid
 
-app = Flask(__name__)
-app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+from http.server import BaseHTTPRequestHandler, HTTPServer
+import hashlib
+import http.cookies
+import os
 
 # Dummy user database (replace with your actual user database)
 users = {
@@ -25,40 +24,47 @@ users = {
 
 # Function to generate and set a remember me token
 def set_remember_cookie(username):
-    token = hashlib.sha256(str(uuid.uuid4()).encode()).hexdigest()
-    response = make_response(redirect('/'))
-    response.set_cookie('remember_token', token, max_age=604800)  # Set cookie to expire in 7 days
-    return response
+    token = hashlib.sha256(os.urandom(64)).hexdigest()
+    response = f'HTTP/1.1 303 See Other\r\nLocation: /dashboard\r\nSet-Cookie: remember_token={token}; Max-Age=604800; Path=/\r\n'
+    return response.encode('utf-8')
 
-# Login route
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        remember_me = request.form.get('remember_me')  # Check if 'Remember Me' checkbox is checked
+# Dummy login functionality
+def login(username, password):
+    if username in users and users[username]['password'] == password:
+        return True
+    return False
 
-        if username in users and users[username]['password'] == password:
+# HTTP request handler
+class MyHTTPRequestHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-type', 'text/html')
+        self.end_headers()
+        self.wfile.write(b"<html><body><form method='post'>Username:<input type='text' name='username'><br>Password:<input type='password' name='password'><br>Remember Me:<input type='checkbox' name='remember_me'><br><input type='submit' value='Login'></form></body></html>")
+
+    def do_POST(self):
+        content_length = int(self.headers['Content-Length'])
+        post_data = self.rfile.read(content_length).decode('utf-8')
+        username = post_data.split('&')[0].split('=')[1]
+        password = post_data.split('&')[1].split('=')[1]
+        remember_me = 'remember_me' in post_data
+
+        if login(username, password):
             if remember_me:
-                # If 'Remember Me' checkbox is checked, set a remember me token
-                return set_remember_cookie(username)
+                response = set_remember_cookie(username)
             else:
-                # If 'Remember Me' checkbox is not checked, set a session cookie
-                return redirect('/')
+                response = b'HTTP/1.1 303 See Other\r\nLocation: /dashboard\r\n'
         else:
-            return 'Invalid username or password'
+            response = b'HTTP/1.1 401 Unauthorized\r\n\r\nInvalid username or password'
 
-    return render_template('login.html')
+        self.wfile.write(response)
 
-# Homepage route
-@app.route('/')
-def home():
-    if 'remember_token' in request.cookies:
-        # Check if remember token exists, if yes, auto login the user
-        token = request.cookies.get('remember_token')
-        # Here you would validate the token and perform necessary actions to log in the user
-        return f'You are logged in using remember me feature!'
-    return 'You are not logged in.'
+# Main function to run the HTTP server
+def run(server_class=HTTPServer, handler_class=MyHTTPRequestHandler, port=8000):
+    server_address = ('', port)
+    httpd = server_class(server_address, handler_class)
+    print(f'Starting server on port {port}...')
+    httpd.serve_forever()
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    run()
