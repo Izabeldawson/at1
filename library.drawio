@@ -1,16 +1,16 @@
-<mxfile host="app.diagrams.net" modified="2024-05-29T04:36:19.319Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36" etag="vn33W_l01b9bsQiVSdDn" version="24.4.9" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-29T04:38:00.322Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36" etag="mu4PkN9cUA8myjLCygY1" version="24.4.9" type="github">
   <diagram name="Page-1" id="w8sxK4uTFAqLgc2JHN9x">
-    <mxGraphModel dx="763" dy="1662" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="734" dy="1643" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="65VBVAg1cRW7AZMOwMHU-1" value="Members" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="590" y="50" width="160" height="120" as="geometry">
+          <mxGeometry x="640" y="50" width="110" height="120" as="geometry">
             <mxRectangle x="240" y="80" width="100" height="50" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="65VBVAg1cRW7AZMOwMHU-2" value="+Member ID (PK)&lt;div&gt;+Name&lt;/div&gt;&lt;div&gt;+Address&lt;/div&gt;&lt;div&gt;+Phone number&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="65VBVAg1cRW7AZMOwMHU-1">
-          <mxGeometry y="50" width="160" height="70" as="geometry" />
+          <mxGeometry y="50" width="110" height="70" as="geometry" />
         </mxCell>
         <mxCell id="65VBVAg1cRW7AZMOwMHU-3" value="Books" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="590" y="200" width="160" height="120" as="geometry" />
@@ -33,24 +33,25 @@
         <mxCell id="65VBVAg1cRW7AZMOwMHU-21" value="#one member gets one loan(one to one)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="350" y="70" width="240" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="65VBVAg1cRW7AZMOwMHU-23" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERmandOne;rounded=0;exitX=0.003;exitY=0.154;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="65VBVAg1cRW7AZMOwMHU-2">
+        <mxCell id="65VBVAg1cRW7AZMOwMHU-23" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERmandOne;rounded=0;entryX=1.006;entryY=0.339;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="65VBVAg1cRW7AZMOwMHU-2" target="65VBVAg1cRW7AZMOwMHU-7">
           <mxGeometry width="100" height="100" relative="1" as="geometry">
-            <mxPoint x="550" y="110" as="sourcePoint" />
-            <mxPoint x="500" y="200" as="targetPoint" />
+            <mxPoint x="600" y="110" as="sourcePoint" />
+            <mxPoint x="530" y="200" as="targetPoint" />
             <Array as="points">
+              <mxPoint x="620" y="110" />
               <mxPoint x="500" y="200" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="65VBVAg1cRW7AZMOwMHU-26" value="Member borrows&amp;nbsp;&lt;div&gt;books&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="65VBVAg1cRW7AZMOwMHU-23">
+        <mxCell id="65VBVAg1cRW7AZMOwMHU-26" value="Member borrows&amp;nbsp;&lt;div&gt;books&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rotation=0;" vertex="1" connectable="0" parent="65VBVAg1cRW7AZMOwMHU-23">
           <mxGeometry x="-0.115" y="-2" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint x="-22" y="-3" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="65VBVAg1cRW7AZMOwMHU-24" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERmandOne;rounded=0;exitX=-0.01;exitY=0.154;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="65VBVAg1cRW7AZMOwMHU-4">
+        <mxCell id="65VBVAg1cRW7AZMOwMHU-24" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERmandOne;rounded=0;exitX=-0.01;exitY=0.154;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="65VBVAg1cRW7AZMOwMHU-4" target="65VBVAg1cRW7AZMOwMHU-7">
           <mxGeometry width="100" height="100" relative="1" as="geometry">
             <mxPoint x="550" y="260" as="sourcePoint" />
-            <mxPoint x="500" y="230" as="targetPoint" />
+            <mxPoint x="530" y="270" as="targetPoint" />
             <Array as="points">
               <mxPoint x="460" y="349" />
               <mxPoint x="530" y="300" />
