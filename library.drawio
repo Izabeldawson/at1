@@ -1,9 +1,33 @@
-<mxfile host="app.diagrams.net" modified="2024-05-29T04:01:13.709Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36" version="24.4.9" etag="Rza7F0LQZO0Z2XtkzsoI" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-29T04:09:37.363Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36" etag="eV9eH-qKow16kCbe90E9" version="24.4.9" type="github">
   <diagram name="Page-1" id="w8sxK4uTFAqLgc2JHN9x">
-    <mxGraphModel>
+    <mxGraphModel dx="954" dy="616" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="65VBVAg1cRW7AZMOwMHU-1" value="Members" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="80" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="65VBVAg1cRW7AZMOwMHU-2" value="+Member ID (PK)&lt;div&gt;+Name&lt;/div&gt;&lt;div&gt;+Address&lt;/div&gt;&lt;div&gt;+Phone number&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="65VBVAg1cRW7AZMOwMHU-1">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="65VBVAg1cRW7AZMOwMHU-3" value="Books" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="65VBVAg1cRW7AZMOwMHU-4" value="+Book ID (PK)&lt;br&gt;+Title&lt;br&gt;+Author&lt;div&gt;+Publication year&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="65VBVAg1cRW7AZMOwMHU-3">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="65VBVAg1cRW7AZMOwMHU-6" value="Loans" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="80" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="65VBVAg1cRW7AZMOwMHU-7" value="&lt;div&gt;+Records&lt;/div&gt;+Loan date&lt;div&gt;+Return date&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="65VBVAg1cRW7AZMOwMHU-6">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="65VBVAg1cRW7AZMOwMHU-8" value="Libranians" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="80" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="65VBVAg1cRW7AZMOwMHU-9" value="&lt;div&gt;+Employee ID (PK)&lt;/div&gt;&lt;div&gt;+Staff&lt;br&gt;&lt;/div&gt;&lt;div&gt;+Contact detail&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="65VBVAg1cRW7AZMOwMHU-8">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
